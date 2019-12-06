@@ -37,7 +37,7 @@ function checkKey(key) {
 }
 
 function draw({ key }) {
-	hue += 1;
+	hue += 3;
 	ctx.strokeStyle = `hsl(${hue}, 100%, 50%)`;
 	ctx.beginPath();
 	ctx.moveTo(x, y);
