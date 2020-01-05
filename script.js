@@ -24,16 +24,32 @@ ctx.lineTo(x, y);
 ctx.stroke();
 
 function checkKey(key) {
-	// if is faster than switch
-	if (key === 'ArrowUp') {
-		y -= MOVE_AMOUNT;
-	} else if (key === 'ArrowRight') {
-		x += MOVE_AMOUNT;
-	} else if (key === 'ArrowDown') {
-		y += MOVE_AMOUNT;
-	} else if (key === 'ArrowLeft') {
-		x -= MOVE_AMOUNT;
-	}
+    // if is faster than switch
+    if (key === 'ArrowUp') {
+        if (y < MOVE_AMOUNT) {
+            y = 0;
+        } else {
+            y -= MOVE_AMOUNT;
+        }
+    } else if (key === 'ArrowRight') {
+        if (x > width) {
+            x = 0;
+        } else {
+            x += MOVE_AMOUNT;
+        }
+    } else if (key === 'ArrowDown') {
+        if (y > height) {
+            y = 0;
+        } else {
+            y += MOVE_AMOUNT;
+        }
+    } else if (key === 'ArrowLeft') {
+        if (x < MOVE_AMOUNT) {
+            x = 0;
+        } else {
+            x -= MOVE_AMOUNT;
+        }
+    }
 }
 
 function draw({ key }) {
